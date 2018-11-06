@@ -1,0 +1,137 @@
+﻿<Window x:Class="TwitchAppLearnEnglish.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwitchAppLearnEnglish"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="700" Style="{DynamicResource MainWindowStyle}" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid x:Name="MainGrid" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="3" Grid.Row="6" Grid.RowSpan="7" Grid.ColumnSpan="6" Source="/Resources/Board.png" Stretch="Fill"></Image>
+            
+            <Viewbox Grid.Row="0" Grid.Column="13" HorizontalAlignment="Center"  >
+                <Button x:Name="Maximize" Content="◻"  Click="Maximize_Click" Width="20" Height="25" Style="{DynamicResource MainButtonStyle}"/>
+            </Viewbox>
+            <Viewbox Grid.RowSpan="2" Grid.ColumnSpan="13"  >
+                <Label x:Name="Title" Style="{DynamicResource LabelStyle}" HorizontalAlignment="Center"  Grid.RowSpan="2" Grid.ColumnSpan="6" FontSize="80" FontFamily="Freestyle Script" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <TextBox x:Name="TimerLabel"  FontSize="50" Style="{DynamicResource TextBoxStyle}" BorderThickness="0" FontFamily="Freestyle Script">5</TextBox>
+            </Viewbox>
+            <Viewbox Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="3">
+                <Label x:Name="EngWord"  FontSize="50" HorizontalAlignment="Center"  Style="{DynamicResource LabelStyle}" FontWeight="Bold"> WORD </Label>
+            </Viewbox>
+            <Viewbox Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="2" Grid.RowSpan="3" Visibility="Visible">
+                <Label x:Name="RuWord"  FontSize="50" HorizontalAlignment="Center"  Style="{DynamicResource LabelStyle}" ></Label>
+            </Viewbox>
+            
+            
+            <Grid Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="6" Grid.RowSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+            <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Left">
+                <Label x:Name="AnswerVarOne" Style="{DynamicResource LabelStyle}"></Label>
+            </Viewbox >
+                <Viewbox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"  HorizontalAlignment="Left">
+                <Label  x:Name="AnswerVarTwo" Style="{DynamicResource LabelStyle}" ></Label>
+            </Viewbox>
+                <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Left">
+                <Label  x:Name="AnswerVarThree" Style="{DynamicResource LabelStyle}"></Label>
+            </Viewbox>
+                <Viewbox  Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Left">
+                <Label  x:Name="AnswerVarFour" Style="{DynamicResource LabelStyle}"></Label>
+            </Viewbox>
+            </Grid>
+
+            <Border  Opacity="0.9" Grid.Column="9" Grid.Row="2" Grid.RowSpan="11" Grid.ColumnSpan="3" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF350D6E"/>
+                        <GradientStop Color="#FF420166" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect></DropShadowEffect>
+                </Border.Effect>
+            </Border>
+            <Viewbox Grid.Column="9" Grid.ColumnSpan="1" Grid.Row="2" HorizontalAlignment="Left">
+                <Label  Style="{DynamicResource LabelStyle}"  FontSize="35" FontFamily="Freestyle Script">Log</Label>
+            </Viewbox>
+            <ListBox x:Name="ListBoxAnswers"  Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="10" Background="{x:Null}"  Foreground="White" FontSize="35" BorderThickness="0"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             ScrollViewer.VerticalScrollBarVisibility="Disabled" ></ListBox>
+           
+            <Viewbox Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="2">
+                <Label  Style="{DynamicResource LabelStyle}" HorizontalAlignment="Center" FontSize="120" FontFamily="Freestyle Script" FontWeight="Bold">Next word in</Label>
+            </Viewbox>
+            <Border  Opacity="0.9" Grid.Column="0" Grid.Row="2" Grid.RowSpan="11" Grid.ColumnSpan="3" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF350D6E"/>
+                        <GradientStop Color="#FF420166" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect></DropShadowEffect>
+                </Border.Effect>
+            </Border>
+            <Viewbox Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="2" HorizontalAlignment="Left">
+                <Label  Style="{DynamicResource LabelStyle}"  FontSize="35" FontFamily="Freestyle Script">Score</Label>
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left">
+                <Label  Style="{DynamicResource LabelStyle}" FontSize="35" FontFamily="Freestyle Script">Name</Label>
+            </Viewbox>
+            <ListBox x:Name="NameList" Grid.Column="0" Grid.Row="3" Grid.RowSpan="10" Grid.ColumnSpan="2" Background="{x:Null}"  Foreground="White" FontSize="60" BorderThickness="0" FontFamily="Freestyle Script" ScrollViewer.VerticalScrollBarVisibility="Disabled"></ListBox>
+            <ListBox x:Name="ScoreList" Grid.Column="2" Grid.Row="3" Grid.RowSpan="10" Grid.ColumnSpan="1" Background="{x:Null}"  Foreground="White" FontSize="60" BorderThickness="0" FontFamily="Freestyle Script" ScrollViewer.VerticalScrollBarVisibility="Disabled"></ListBox>
+  
+
+        </Grid>
+    </Grid>
+</Window>
